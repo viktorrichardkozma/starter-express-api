@@ -13,7 +13,7 @@ const app = express();
 // Provide the required configuration
 const client_email = process.env.CLIENT_EMAIL;
 const calendarId = process.env.CALENDAR_ID;
-const fixedKey = process.env.KEY.replace(new RegExp("\\\\n", "\g"), "\n")
+const fixedKey = (process.env.KEY_ZERO+process.env.KEY_FIRST+process.env.KEY_SECOND).replace(new RegExp("\\\\n", "\g"), "\n")
 
 // Google calendar API settings
 const calendar = google.calendar({version : "v3"});
@@ -52,7 +52,7 @@ const getTodayEvents = async () => {
   }
 };
  
-app.get('/'+process.env.ENDPOINT, (req, res) => {
+app.get('/events', (req, res) => {
   
   getTodayEvents().then( events => {
 
