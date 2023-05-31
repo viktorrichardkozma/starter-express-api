@@ -12,7 +12,7 @@ async function getColumnValues(startDate, endDate) {
 const formattedStartDate = moment(startDate, 'YYYY-MM-DD')
 const formattedEndDate = moment(endDate, 'YYYY-MM-DD')
 
-const fixedKey = (process.env.KEY_XLS_FIRST + process.env.KEY_XLS_SECOND).replace(new RegExp("\\\\n", "\g"), "\n")
+const fixedKey = (process.env.KEY_XLS_FIRST + process.env.KEY_XLS_SECOND).split(String.raw`\n`).join('\n')
 
 const auth = new google.auth.GoogleAuth({
     credentials: {
