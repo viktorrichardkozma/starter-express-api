@@ -52,7 +52,7 @@ const getTodayEvents = async () => {
   }
 };
  
-app.get('/events', (req, res) => {
+app.get('/'+process.env.ENDPOINT, (req, res) => {
   
   getTodayEvents().then( events => {
 
