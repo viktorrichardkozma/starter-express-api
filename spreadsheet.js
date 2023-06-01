@@ -13,6 +13,8 @@ const formattedStartDate = moment(startDate, 'YYYY-MM-DD')
 const formattedEndDate = moment(endDate, 'YYYY-MM-DD')
 
 const fixedKey = (process.env.KEY_XLS_FIRST + process.env.KEY_XLS_SECOND).replace(/\\n/g, '\n');
+    
+    console.log("FIXEDKEYSPREADSHEET",fixedKey);
 
 const auth = new google.auth.GoogleAuth({
     credentials: {
