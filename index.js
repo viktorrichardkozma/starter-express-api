@@ -61,17 +61,23 @@ app.get('/'+process.env.ENDPOINT, (req, res) => {
       const { summary } = events[0];
       const { start : {date : startDate}  = {} } = events[0];
       const { end : {date : endDate} = {}} = events[0];
-
-      getColumnValues(moment(startDate, 'YYYY-MM-DD'),moment(endDate, 'YYYY-MM-DD')).then( guests =>
         
-        res.send(JSON.stringify({
+      res.send(JSON.stringify({
           summary,
           startDate,
-          endDate,
-          guests
+          endDate
         },null, 2))  
+
+      //getColumnValues(moment(startDate, 'YYYY-MM-DD'),moment(endDate, 'YYYY-MM-DD')).then( guests =>
         
-      );
+       // res.send(JSON.stringify({
+       //   summary,
+       //   startDate,
+       //   endDate,
+       //   guests
+       // },null, 2))  
+        
+     // );
     }
   })
 
