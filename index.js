@@ -4,8 +4,8 @@ dotenv.config()
 import express from "express";
 import moment from "moment"
 import {google} from 'googleapis';
-import {getColumnValues} from './spreadsheet.js'
-
+/* import {getColumnValues} from './spreadsheet.js'
+ */
 /* import {sendWelcomeMail} from "./mailservice.js";
  */
 const app = express();
