@@ -22,10 +22,9 @@ const auth = new google.auth.JWT(
     ]
 );
 const getTodayEvents = async () => {
-  const startDate = moment().startOf('day').subtract(10, 'days').toISOString();
-  const endDate = moment().endOf('day').toISOString();
-/*   const endDate = moment().endOf('day').add(3, 'days').toISOString();
- */
+  const startDate = moment().startOf('day').subtract(1, 'days').toISOString();
+  const endDate = moment().endOf('day').add(2, 'days').toISOString();
+
   try {
       let response = await calendar.events.list({
           auth: auth,
