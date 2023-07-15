@@ -55,7 +55,7 @@ app.get('/'+process.env.ENDPOINT, (req, res) => {
   getTodayEvents().then( events => {
 
     if(events.length>0){
-      const summary = events.map(( (event) => {
+      const finsum = events.map(( (event) => {
         const { summary } = event;
         const { start : {date : startDate}  = {} } = event;
         const { end : {date : endDate} = {}} = event;
@@ -70,7 +70,7 @@ app.get('/'+process.env.ENDPOINT, (req, res) => {
       }))
 
       res.send(JSON.stringify({
-        summary
+        finsum
       },null, 2))
 
 
